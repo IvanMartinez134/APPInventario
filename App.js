@@ -1,13 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-const personasRoutes = require('./routes/persona.routes')
+const personaRoutes = require('./routes/persona.routes');
+const productoRoutes = require('./routes/producto.routes');
 
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
-app.use('/api/personas', personasRoutes);
+
+app.use('/api/personas', personaRoutes);
+app.use('/api/productos', productoRoutes);
 
 mongoose.connect('mongodb+srv://20233tn134:Diegoivan286@ivan-5b.og3l0.mongodb.net/inventario-db?retryWrites=true&w=majority&appName=Ivan-5B', { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {

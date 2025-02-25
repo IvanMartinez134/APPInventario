@@ -26,6 +26,8 @@ class Validaciones {
     const date = new Date(fecha);
     return date.toISOString().split('T')[0] === fecha;
     }
+
+    
     }
     
     module.exports = new Validaciones();
